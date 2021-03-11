@@ -47,23 +47,21 @@
       <el-row :gutter="20">
         <el-col :span="12">
           <el-form-item prop="verifyCode">
-          <el-input
-            v-model="loginForm.verifyCode"
-            placeholder="验证码"
-            name="password" />
+            <el-input
+              v-model="loginForm.verifyCode"
+              placeholder="验证码"
+              name="password"
+            />
           </el-form-item>
         </el-col>
 
         <el-col :span="8">
-        <el-image
-          style="width: 200px; height: 50px"
-          :src="url">
-        </el-image>
+          <el-image
+            style="width: 200px; height: 50px"
+            :src="url"
+          />
         </el-col>
-
       </el-row>
-
-
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
@@ -119,7 +117,7 @@ export default {
     return {
       loginForm: {
         loginName: 'admin',
-        password: '111111',
+        password: '123456',
         verifyCode: '',
         tokenId: ''
       },
@@ -187,7 +185,7 @@ export default {
               this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               this.loading = false
             })
-            .catch((error) => {
+            .catch(() => {
               this.loading = false
             })
         } else {
@@ -205,7 +203,7 @@ export default {
       }, {})
     },
     generateCaptcha1() {
-      generateCaptcha({test: 'sss'}).then(response => {
+      generateCaptcha({ test: 'sss' }).then(response => {
         const { data } = response
         this.url = data.prefix + data.base64
         this.loginForm.tokenId = data.tokenId

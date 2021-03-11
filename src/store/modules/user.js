@@ -47,9 +47,8 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token).then(response => {
+      getInfo({ test: 'aaa' }).then(response => {
         const { data } = response
-        console.log(data)
         if (!data) {
           reject('Verification failed, please Login again.')
         }
@@ -67,7 +66,6 @@ const actions = {
         commit('SET_INTRODUCTION', introduction)
         resolve(data)
       }).catch(error => {
-        console.log(error)
         reject(error)
       })
     })
