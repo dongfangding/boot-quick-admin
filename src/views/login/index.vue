@@ -59,6 +59,7 @@
           <el-image
             style="width: 200px; height: 50px"
             :src="url"
+            @click="generateCaptcha"
           />
         </el-col>
       </el-row>
@@ -156,7 +157,7 @@ export default {
       this.$refs.password.focus()
     }
 
-    this.generateCaptcha1()
+    this.generateCaptcha()
   },
   destroyed() {
     // window.removeEventListener('storage', this.afterQRScan)
@@ -202,8 +203,8 @@ export default {
         return acc
       }, {})
     },
-    generateCaptcha1() {
-      generateCaptcha({ test: 'sss' }).then(response => {
+    generateCaptcha() {
+      generateCaptcha({ }).then(response => {
         const { data } = response
         this.url = data.prefix + data.base64
         this.loginForm.tokenId = data.tokenId
