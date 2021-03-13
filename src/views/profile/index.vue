@@ -56,9 +56,12 @@ export default {
   },
   methods: {
     getUser() {
+      const arrnew = this.roles.map((obj, index) => {
+        return obj.roleName
+      }).join(',').split(',')
       this.user = {
         name: this.name,
-        role: this.roles.join(' | '),
+        role: arrnew.join('|'),
         email: 'admin@test.com',
         avatar: this.avatar
       }

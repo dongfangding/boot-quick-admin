@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: '/boot-quick-admin/article/list',
+    url: '/vue-element-admin/article/list',
     method: 'get',
     params: query
   })

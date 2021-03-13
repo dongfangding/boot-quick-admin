@@ -30,6 +30,11 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    proxy: {
+      '/boot-quick': {
+        target: 'www.snowball.fans'
+      }
+    },
     port: port,
     open: true,
     overlay: {
