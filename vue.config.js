@@ -24,17 +24,12 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
+  publicPath: '/boot-quick-admin',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    proxy: {
-      '/boot-quick': {
-        target: 'www.snowball.fans'
-      }
-    },
     port: port,
     open: true,
     overlay: {
