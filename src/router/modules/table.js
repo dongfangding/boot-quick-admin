@@ -35,12 +35,6 @@ const tableRouter = {
       component: () => import('@/views/table/complex-table'),
       name: 'ComplexTable',
       meta: { title: 'Complex Table' }
-    },
-    {
-      path: 'sys-user-list',
-      component: () => import('@/views/table/sys-user-list'),
-      name: 'SysUserList',
-      meta: { title: 'SysUser List' }
     }
   ]
 }

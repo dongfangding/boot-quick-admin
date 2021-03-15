@@ -91,3 +91,27 @@ export function sysUserActiveSwitch(data) {
   })
 }
 
+/**
+ * 新增系统用户
+ * @param
+ */
+ export function createSysUser(data) {
+  return request({
+    url: 'sysUser/create',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 编辑系统用户
+ * @param
+ */
+ export function updateSysUser(data) {
+  return request({
+    url: 'sysUser/update',
+    method: 'post',
+    data
+  })
+}
+
